@@ -17,10 +17,11 @@ class PertanyaanController extends Controller
     	return view('pertanyaan.form');
     }
 
-    Public function list(Request $request){
+    Public function store(Request $request){
     	$data = $request->all();
     	unset($data["_token"]);
     	$pertanyaan = PertanyaanModel::save($data);
-    	return view('pertanyaan.index');
+    	$pertanyaan = PertanyaanModel::get_all();
+    	return view('pertanyaan.index', compact('pertanyaan'));
     }
 }

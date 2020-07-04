@@ -1,7 +1,7 @@
 @extends('adminlte.master')
 
 @section('content')
-	<form action= "/pertanyaan" method="POST">
+	<form action= "{{url('/pertanyaan')}}" method="POST">
 		@csrf
 		<div class="form-group">
     <label for="judul">Judul:</label>
@@ -12,7 +12,6 @@
     <input type="text" class="form-control" placeholder="Tulis pertanyaan" id="isi" name="Isi">
     <input hidden name="created_at" value="{{\carbon\carbon::now()}}">
   </div>
-
   <button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 @endsection

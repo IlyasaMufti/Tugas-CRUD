@@ -3,16 +3,21 @@
 namespace App\Models;
 use Illuminate\Support\Facades\DB;
 
-class JawabanModel {
+class JawabanModel{
+
 	public static function get_all(){
 		$jawaban = DB::table('jawaban')->get();
 
 		return $jawaban;
 	}
 
+	public static function get($filter){
+		$jawaban = DB::table('jawaban')->get()-> where('id_pertanyaan', '=', $filter);
+		return $jawaban;
+	}
+
 	public static function save($data){
 		$new_jawaban = DB::table('jawaban')->insert($data);
-
 		return $new_jawaban;
 	}
 }

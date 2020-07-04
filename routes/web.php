@@ -13,14 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PertanyaanController@index');
 
 Route::get('/pertanyaan','PertanyaanController@index');
 
 Route::get('/pertanyaan/create','PertanyaanController@create');
 
-Route::POST('/pertanyaan', 'PertanyaanController@list');
+Route::POST('/pertanyaan', 'PertanyaanController@store');
 
-Route::POST('/jawaban/{id_pertanyaan}','JawabanController@store');
+Route::POST('/jawaban/{pertanyaan_id}', 'JawabanController@store');
+
+Route::get('/jawaban/{pertanyaan_id}', 'JawabanController@index');
+

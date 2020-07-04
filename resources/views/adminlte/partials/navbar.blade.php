@@ -5,10 +5,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/" class="nav-link">Task Progress</a>
+        <a href="{{url('/pertanyaan')}}" class="nav-link">List Pertanyaan</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/data-tables" class="nav-link">DataTable</a>
+        <a href="{{url('/pertanyaan/create')}}" class="nav-link">Buat Pertanyaan Baru</a>
       </li>
     </ul>
 

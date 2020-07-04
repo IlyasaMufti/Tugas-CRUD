@@ -5,14 +5,10 @@ use Illuminate\Support\Facades\DB;
 
 class PertanyaanModel{
 
-	public function jwb(){
-		return $this->hasMany('App/Models/jawabanModel');
-	}
+	Public static function get_all(){
+	$pertanyaan = DB::table('pertanyaan')->get();
 
-	public static function get_all(){
-		$pertanyaan = DB::table('pertanyaan')->get();
-
-		return $pertanyaan;
+	return $pertanyaan;
 	}
 
 	public static function save($data){
