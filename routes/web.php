@@ -25,3 +25,10 @@ Route::POST('/jawaban/{pertanyaan_id}', 'JawabanController@store');
 
 Route::get('/jawaban/{pertanyaan_id}', 'JawabanController@index');
 
+Route::get('/pertanyaan/{pertanyaan_id}' ,'PertanyaanController@show');
+
+Route::get('/pertanyaan/{id}/edit', 'PertanyaanController@edit');
+
+Route::put('/pertanyaan/{pertanyaan_id}' ,'PertanyaanController@update');
+
+Route::DELETE('/pertanyaan/{pertanyaan_id}','PertanyaanController@delete');

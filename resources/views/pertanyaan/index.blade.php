@@ -18,7 +18,7 @@
         <td>{{$key + 1}}</td>
         <td>{{$item->Judul}}</td>
         <td>{{$item->Isi}}</td>
-        <td><a href="{{ url ('/jawaban/'.$item->id)}}">Lihat Jawaban</a></td>
+        <td><a href="{{ url ('/pertanyaan/'.$item->id)}}">Detail Pertanyaan</a></td>
         <td><form action="{{ url ('/jawaban/'.$item->id)}}" method="POST"><div class="form-group">
         	@csrf
     		<input type="text" class="form-control" placeholder="Tulis jawaban" id="isi" name="Isi">

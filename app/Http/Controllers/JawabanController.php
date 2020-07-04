@@ -12,7 +12,7 @@ class JawabanController
     //
     public function index($pertanyaan_id){
     $jawaban = jawabanModel::get($pertanyaan_id);
-    return view('jawaban.index', compact('jawaban'));
+    return $jawaban;
     } 
 
     
