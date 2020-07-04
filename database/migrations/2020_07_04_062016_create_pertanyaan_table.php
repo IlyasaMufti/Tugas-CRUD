@@ -4,20 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJawabanTable extends Migration
+class CreatePertanyaanTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+   public function up()
     {
-        Schema::create('jawaban', function (Blueprint $table) {
-            $table->bigIncrements('id_jawaban');
+        Schema::create('pertanyaan', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('Judul')->nullasble();
             $table->string('Isi')->nullable();
-            $table->integer('id_pertanyaan');
-            $table->timestamps();        
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ class CreateJawabanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jawaban');
+        Schema::dropIfExists('pertanyaan');
     }
 }

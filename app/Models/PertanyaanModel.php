@@ -1,13 +1,14 @@
 <?php 
 
 namespace App\Models;
-use Illuminate\Database\Eloquent\Model; 
+use Illuminate\Support\Facades\DB;
 
-class PertanyaanModel extends model{
+class PertanyaanModel{
 
 	public function jwb(){
-		return $this->hasMany('App/Models/jawabanModel')
+		return $this->hasMany('App/Models/jawabanModel');
 	}
+
 	public static function get_all(){
 		$pertanyaan = DB::table('pertanyaan')->get();
 

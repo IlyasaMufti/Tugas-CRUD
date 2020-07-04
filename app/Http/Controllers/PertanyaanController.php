@@ -20,7 +20,7 @@ class PertanyaanController extends Controller
     Public function list(Request $request){
     	$data = $request->all();
     	unset($data["_token"]);
-    	$pertanyaan=PertanyaanModel::save($data);
+    	$pertanyaan = PertanyaanModel::save($data);
     	return view('pertanyaan.index');
     }
 }

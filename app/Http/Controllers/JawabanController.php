@@ -15,4 +15,11 @@ class JawabanController extends Controller
     Public function create(){
     	return view('pertanyaan.form',compact)
     }
+
+     Public function store($pertanyaan_id, Request $request){
+    	$data = $request->all();
+    	unset($data["_token"]);
+    	$jawaban = JawabanModel::save($data);
+    	return view('pertanyaan.index');
+    }
 }
